@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>HotMaleDotCom Survey</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.1.1/js/all.js" integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <!-- <script src="main.js"></script> -->
+</head>
+
+<body>
+
+    <header>
+        <h1 class="title">HotMaleDotCom</h1>
+        <h2>"Get 'hooked up' with the wild, wild web! ;)"</h2>
+
+    </header>
+
+    <h2>Survey</h2>
+    <hr>
+    <h3>About You</h3>
+    <form>
+        Name:
+        <br>
+        <input type="text" id="name">
+        <br> Link to Photo:
+        <br>
+        <input type="text" id="photo">
+        <br>
+        <hr> 1. How much of a cat person are you?
+        <br>
+        <select name="q1" id="q1">
+            <option disabled selected value> -- select -- </option>
+            <option value="5">5 - I have severe toxoplasmosis.</option>
+            <option value="4">4 - I am a reasonable being and thus quite fond of them.</option>
+            <option value="3">3 - Cats are ok, unlike me.</option>
+            <option value="2">2 - I am a monster.</option>
+            <option value="1">1 - I am Joe K.</option>
+        </select>
+
+        <br> 2. How much of a dog person are you?
+        <br>
+        <select name="q2" id="q2">
+            <option disabled selected value> -- select -- </option>
+            <option value="5">5 - I let my dogs French kiss me.</option>
+            <option value="4">4 - I like dogs.</option>
+            <option value="3">3 - I have no feelings about dogs.</option>
+            <option value="2">2 - I don't like nice things.</option>
+            <option value="1">1 - I am dead inside.</option>
+        </select>
+
+        <br> 3. How adventurous are you with your... 'friends'? ;)
+        <br>
+        <select name="q3" id="q3">
+            <option disabled selected value> -- select -- </option>
+            <option value="5">5 - Whips and chains are for weenies.</option>
+            <option value="4">4 - Whips and chains.</option>
+            <option value="3">3 - I might try some whipped cream.</option>
+            <option value="2">2 - Just missionary with the lights off.</option>
+            <option value="1">1 - Is... is this where babies come from?</option>
+        </select>
+
+        <br> 4. Which weather conditions do you generally prefer?
+        <br>
+        <select name="q4" id="q4">
+            <option disabled selected value> -- select -- </option>
+            <option value="5">5 - 90 and full sun.</option>
+            <option value="4">4 - 72 and partially cloudy.</option>
+            <option value="3">3 - 45 with falling leaves and a crisp breeze.</option>
+            <option value="2">2 - 25 and a fluffy blanket of snow.</option>
+            <option value="1">1 - 20 below and everything is made of ice. There is no mercy in this frozen land.</option>
+        </select>
+
+        <br> 5. How culinarily adventurous are you?
+        <br>
+        <select name="q5" id="q5">
+            <option disabled selected value> -- select -- </option>
+            <option value="5">5 - Bring forth the entrails!</option>
+            <option value="4">4 - I'll try anything once.</option>
+            <option value="3">3 - I like new things once in a while.</option>
+            <option value="2">2 - Nothing wrong with the classics... for every meal!</option>
+            <option value="1">1 - Ketchup sets my mouth aflame.</option>
+        </select>
+
+        <br> 6. What's your ideal Saturday night?
+        <br>
+        <select name="q6" id="q6">
+            <option disabled selected value> -- select -- </option>
+            <option value="5">5 - It's not strictly legal...</option>
+            <option value="4">4 - DANCING ALL UP IN THE CLURB</option>
+            <option value="3">3 - Going out to a new restaurant.</option>
+            <option value="2">2 - Having a friend over for a movie and drinks.</option>
+            <option value="1">1 - Getting in some quality time with my fuzzy blanky.</option>
+        </select>
+
+        <br> 7. How much body hair do you like?
+        <br>
+        <select name="q7" id="q7">
+            <option disabled selected value> -- select -- </option>
+            <option value="5">5 - It should ripple magnificently in the slightest breeze.</option>
+            <option value="4">4 - Nothin' wrong with a little shag carpeting.</option>
+            <option value="3">3 - Just all the places I expect it to be, otherwise I'll freak out. I am the most boring person and have never
+                thought about this preference.</option>
+            <option value="2">2 - Ehhhhhhhhhhhhhhhhhhhhhh...</option>
+            <option value="1">1 - I will compulsively burn off any body hair I find with a torch in the dead of night.</option>
+        </select>
+
+        <br> 8. What's the best color?
+        <br>
+        <select name="q8" id="q8">
+            <option disabled selected value> -- select -- </option>
+            <option value="5">5 - Red.</option>
+            <option value="4">4 - Yellow.</option>
+            <option value="3">3 - Green.</option>
+            <option value="2">2 - Blue.</option>
+            <option value="1">1 - Purple (Prince RIP).</option>
+        </select>
+
+        <br> 9. How fashionable are you?
+        <br>
+        <select name="q9" id="q9">
+            <option disabled selected value> -- select -- </option>
+            <option value="5">5 - My fashion is so fashionable, it looped back around to unfashionable. But in an edgy kind of way.</option>
+            <option value="4">4 - So yah like I guess you could like call me like a trendsetter?</option>
+            <option value="3">3 - The remarkability of my fashionableness is itself unremarkable.</option>
+            <option value="2">2 - *growing steadily louder* pants, pants, Pants, PANTS!</option>
+            <option value="1">1 - I dunno... are you supposed to buy new clothes at some point?</option>
+        </select>
+
+        <br> 10. What is your ideal amount of people time vs. alone time?
+        <br>
+        <select name="q10" id="q10">
+            <option disabled selected value> -- select -- </option>
+            <option value="5">5 - I cry if I cannot see another human. I have not yet developed object permanence.</option>
+            <option value="4">4 - I make friends like they're chocolate!</option>
+            <option value="3">3 - A moderate and pleasing mix. I am nothing if not reasonable.</option>
+            <option value="2">2 - I have deep and personal relationships with my five cats.</option>
+            <option value="1">1 - *hisses and points furiously at the text below this dropdown list*</option>
+        </select>
+
+        <br> 1 - Once a fortnight, I gingerly part the cobwebs that veil the dark entry of my lair, peering leerily into the
+        deep abyss of the night.
+        <br> Slowly, a great beast crunches over the boxes strewn across the field, glowing eyes searing into my inflammed corneas as
+        it draws nearer.
+        <br> Hark! the hour of my glory draws nigh! The beast stops, eyes growing dim.
+        <br> A small figure emerges from its side, steam wafting from the immense rectangular burden it bears.
+        <br> The figure shakily moves closer, then suddenly drops its load and sprints back to the beast, which roars back to
+        life and squeals away across the terrain.
+        <br> Swiftly pilfering the immense stack inside, I eye the orange text emblazened upon the upper-most box: "Little Caesar's."
+        <br> "Pizza, pizza!" I cackle to no one in particular as the familiar shroud of darkness envelops my pallid form once
+        more.
+        </div>
+
+    </form>
+
+    <button type="submit" id="submit">Submit</button>
+
+    <script type="text/javascript">
+        $("#submit").on("click", function (event) {
+            event.preventDefault();
+
+            let newUser = {
+                name: $("#name").val(),
+                photo: $("#photo").val(),
+                scores: [
+                    $("#q1").val(),
+                    $("#q2").val(),
+                    $("#q3").val(),
+                    $("#q4").val(),
+                    $("#q5").val(),
+                    $("#q6").val(),
+                    $("#q7").val(),
+                    $("#q8").val(),
+                    $("#q9").val(),
+                    $("#q10").val()
+                ]
+            };
+            console.log(newUser)
+
+            $.post("/api/friends", newUser)
+                .then(function (data) {
+                    console.log(data);
+                    alert("Adding user ...");
+                });
+        });
+
+
+    </script>
+</body>
+
+</html>
