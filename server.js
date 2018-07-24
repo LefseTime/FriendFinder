@@ -37,8 +37,7 @@ let users = [
             5,
             4,
             1
-        ],
-        "comparison": 0
+        ]
     },
     {
         "name": "Jeff Goldblum",
@@ -54,8 +53,39 @@ let users = [
             1,
             2,
             5
-        ],
-        "comparison": 0
+        ]
+    },
+    {
+        "name": "just some random guy",
+        "photo": "https://media.npr.org/assets/img/2017/06/01/screen-shot-2017-06-01-at-11.45.45-am_wide-aafc831c1f41f975a1b1a8626ba6d88afb27b112.jpg?s=1400",
+        "scores": [
+            3,
+            4,
+            5,
+            4,
+            5,
+            4,
+            4,
+            5,
+            4,
+            4
+        ]
+    },
+    {
+        "name": "the most boring man in the world",
+        "photo": "https://media.npr.org/assets/img/2017/06/01/screen-shot-2017-06-01-at-11.45.45-am_wide-aafc831c1f41f975a1b1a8626ba6d88afb27b112.jpg?s=1400",
+        "scores": [
+            1,
+            1,
+            1,
+            4,
+            1,
+            1,
+            3,
+            3,
+            1,
+            3
+        ]
     }
 ];
 
@@ -84,25 +114,32 @@ app.post("/api/friends", function (req, res) {
     users.push(newUser);
 
     //console.log(users)
+
+    //TAs, omg this part just feels like such a hot mess I am so sorry
+    let comparisonArr = [];
     for (let i = 0; i < users.length - 1; i++) {
         let userScores = users[i].scores;
-        //console.log(userScores);
-        users[i].comparison = 0;
-        let bestComparison = users[0].comparison;
+        let comparison = 0;
+    
         for (let j = 0; j < userScores.length; j++) {
-            //console.log(newUser.scores[j])
-            users[i].comparison = users[i].comparison + Math.abs(userScores[j] - newUser.scores[j]);
+            comparison = comparison + Math.abs(userScores[j] - newUser.scores[j]);
+            //console.log(comparison)
         }
-        console.log(bestComparison)
-        // if (users[i].comparison < users[i-1].comparison) {
-        //     bestComparison = users[i].comparison
-        // }
-        // else {
-        //     bestComparison = users[i-1].comparison
-        // }
+        comparisonArr.push(comparison)
+        //console.log(comparisonArr)
     }
+    let bestIndex;
+    for (let i=1; i<comparisonArr.length; i++) {
+        if (comparisonArr[i]<comparisonArr[i-1]) {
+            bestIndex = i;
+        }
+        
+        //console.log(comparisonArr[i])
+    }
+    //console.log(bestIndex);
+    //console.log(users[bestIndex])
 
-    res.json(newUser);
+    res.json(users[bestIndex]);
 });
 
 // Starts the server to begin listening
