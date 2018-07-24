@@ -1,13 +1,19 @@
-function htmlRoutes() {
+module.exports = function (app,path) {
     // * A GET Route to `/survey` which should display the survey page.
-    app.get("/survey", function (req, res) {
-        res.sendFile(path.join(__dirname, "survey.html"));
+    app.get("/survey.html", function (req, res) {
+        res.sendFile(path.join(__dirname, "../../app/public/survey.html"));
     });
 
-    // * A default, catch-all route that leads to `home.html` which displays the home page. 
     app.get("/", function (req, res) {
-        res.sendFile(path.join(__dirname, "home.html"));
+        res.sendFile(path.join(__dirname, "../../app/public/home.html"));
     });
-};
 
-module.exports = htmlRoutes;
+    // css?
+    // * A default, catch-all route that leads to `home.html` which displays the home page. 
+    // app.get("/main.css", function (req, res) {
+    //     res.sendFile(path.join(__dirname, "../../app/public/main.css"));
+    // });
+    // app.get("/main.css", function (req, res) {
+    //     res.sendFile(path.join(__dirname, "../../app/public/main.css"));
+    // });
+};

@@ -10,7 +10,45 @@
         crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.1.1/js/all.js" integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <style>
+        body {
+            background-color: #BFCDE0;
+            color: #5D5D81;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            background-color: #5D5D81;
+            color: #ECF0F1;
+        }
+
+        .m-1 {
+            margin: 1em;
+        }
+
+        .m-2 {
+            margin: 2em;
+        }
+
+        .p-1 {
+            padding: 1em;
+        }
+
+        .p-2 {
+            padding: 2em;
+        }
+
+        #lore {
+            background-color:antiquewhite;
+            font-family: cursive;
+            display: flex;
+            justify-content: center
+        }
+    </style>
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
     <!-- <script src="main.js"></script> -->
 </head>
 
@@ -141,25 +179,35 @@
             <option value="4">4 - I make friends like they're chocolate!</option>
             <option value="3">3 - A moderate and pleasing mix. I am nothing if not reasonable.</option>
             <option value="2">2 - I have deep and personal relationships with my five cats.</option>
-            <option value="1">1 - *hisses and points furiously at the text below this dropdown list*</option>
+            <option value="1">1 - *hisses and points furiously at the wrinkled slip of parchment below this dropdown list*</option>
         </select>
+        <br>
 
-        <br> 1 - Once a fortnight, I gingerly part the cobwebs that veil the dark entry of my lair, peering leerily into the
-        deep abyss of the night.
-        <br> Slowly, a great beast crunches over the boxes strewn across the field, glowing eyes searing into my inflammed corneas as
-        it draws nearer.
-        <br> Hark! the hour of my glory draws nigh! The beast stops, eyes growing dim.
-        <br> A small figure emerges from its side, steam wafting from the immense rectangular burden it bears.
-        <br> The figure shakily moves closer, then suddenly drops its load and sprints back to the beast, which roars back to
-        life and squeals away across the terrain.
-        <br> Swiftly pilfering the immense stack inside, I eye the orange text emblazened upon the upper-most box: "Little Caesar's."
-        <br> "Pizza, pizza!" I cackle to no one in particular as the familiar shroud of darkness envelops my pallid form once
-        more.
-        </div>
+        <p id="lore">
+            Once a fortnight, I gingerly part the cobwebs that veil the dark entry of my lair, peering leerily into
+            the deep abyss of the night.
+            <br> Slowly, a great beast crunches over the boxes strewn across the field, glowing eyes searing into my inflammed
+            corneas as it draws nearer.
+            <br> Hark! the hour of my glory draws nigh! The beast stops, eyes growing dim.
+            <br> A small figure emerges from its side, steam wafting from the immense rectangular burden it bears.
+            <br> The figure shakily moves closer, then suddenly drops its load and sprints back to the beast, which roars back
+            to life and squeals away across the terrain.
+            <br> Swiftly pilfering the immense stack inside, I eye the orange text emblazened upon the upper-most box: "Little
+            Caesar's."
+            <br> "Pizza, pizza!" I cackle to no one in particular as the familiar shroud of darkness envelops my pallid form
+            once more.
+            </div>
+        </p>
 
     </form>
 
+    <br>
+
     <button type="submit" id="submit">Submit</button>
+
+    <br>
+
+    <img id="photo"></img>
 
     <script type="text/javascript">
         $("#submit").on("click", function (event) {
@@ -181,12 +229,14 @@
                     $("#q10").val()
                 ]
             };
-            console.log(newUser)
+            //console.log(newUser)
 
             $.post("/api/friends", newUser)
                 .then(function (data) {
-                    console.log(data);
-                    alert("Adding user ...");
+                    $("#photo").text("do you work?")
+                    $("#photo").attr("src", data.photo);
+                    alert(`Your match is: ${data.name}!
+                    Congratulations! ${data.photo}`);
                 });
         });
 
